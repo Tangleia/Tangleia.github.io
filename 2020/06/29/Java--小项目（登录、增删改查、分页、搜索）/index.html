@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Java--小项目（登录、增删改查、分页、搜索） - 归子莫的博客</title>
+  
+  
+    <meta name="description" content="Java–小项目（登录、增删改查、分页、搜索）">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://www.guizimo.top/index/logo.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div class="cover-wrapper">
+    
+      <cover class='cover post half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">归子莫的博客</p>
+    
+    
+      <p class="subtitle">「笔杆揭不起，绘不出青烟别春泥  ————归子莫」</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-rss fa-fw'></i>博客
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>归档
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/friends/"
+                
+                
+                id="friends">
+                <i class='fas fa-link fa-fw'></i>友链
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/about/"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            VOLANTIS <b><sup style='color:#3AA757'>2.6.6</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/06/29/Java--%E5%B0%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%99%BB%E5%BD%95%E3%80%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E3%80%81%E5%88%86%E9%A1%B5%E3%80%81%E6%90%9C%E7%B4%A2%EF%BC%89/">
+      Java--小项目（登录、增删改查、分页、搜索）
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://Tangleia.github.io" rel="nofollow">
+    <img src="https://www.guizimo.top/index/logo.png">
+    <p>归子莫</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年6月29日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h2 id="Java–小项目（登录、增删改查、分页、搜索）"><a href="#Java–小项目（登录、增删改查、分页、搜索）" class="headerlink" title="Java–小项目（登录、增删改查、分页、搜索）"></a>Java–小项目（登录、增删改查、分页、搜索）</h2><a id="more"></a>
+
+<p><strong>博客说明</strong></p>
+<blockquote>
+<p>文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！</p>
+</blockquote>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><h4 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h4><p>Servlet、JSP、MySQL、JDBCTempleat、Duird、BeanUtilS、tomcat</p>
+<h4 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h4><p>登录功能，列表展示，数据添加，数据编辑，数据删除，批量删除，分页展示，关键字搜索</p>
+<h4 id="创建JavaWeb项目"><a href="#创建JavaWeb项目" class="headerlink" title="创建JavaWeb项目"></a>创建JavaWeb项目</h4><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200628131331797.png" alt="image-20200628131331797"></p>
+<h4 id="导入依赖"><a href="#导入依赖" class="headerlink" title="导入依赖"></a>导入依赖</h4><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200628131511018.png" alt="image-20200628131511018"></p>
+<h4 id="添加页面文件"><a href="#添加页面文件" class="headerlink" title="添加页面文件"></a>添加页面文件</h4><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200628132321881.png" alt="image-20200628132321881"></p>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">little</span>; <span class="comment">-- 创建数据库</span></span><br><span class="line"><span class="keyword">use</span> <span class="keyword">little</span>; 			   <span class="comment">-- 使用数据库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(   <span class="comment">-- 创建表</span></span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	gender <span class="built_in">varchar</span>(<span class="number">5</span>),</span><br><span class="line">	age <span class="built_in">int</span>,</span><br><span class="line">	address <span class="built_in">varchar</span>(<span class="number">32</span>),</span><br><span class="line">	qq	<span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">	email <span class="built_in">varchar</span>(<span class="number">50</span>,</span><br><span class="line">	username <span class="built_in">varchar</span>(<span class="number">32</span>),</span><br><span class="line">  <span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">32</span>),</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="列表展示"><a href="#列表展示" class="headerlink" title="列表展示"></a>列表展示</h4><h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>首先我们需要一组列表的数据，那么我们就需要一个相对应servlet，通过我们的三层架构，使用service同一做接口，然后调用dao层使用JBDC操作数据库，这样我们可以获得一个map集合的数据，然后就是渲染数据到jsp页面了，通过JSTL和EL把数据循环渲染到表里面，达到列表的展示</p>
+<h5 id="list-jsp"><a href="#list-jsp" class="headerlink" title="list.jsp"></a>list.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: tanglei</span><br><span class="line">  Date: <span class="number">2020</span>/<span class="number">6</span>/<span class="number">28</span></span><br><span class="line">  Time: 下午<span class="number">2</span>:<span class="number">15</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;!-- 网页使用的语言 --&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!-- 指定字符集 --&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;!-- 使用Edge最新的浏览器的渲染方式 --&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">    &lt;!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。</span><br><span class="line">    width: 默认宽度与设备的宽度相同</span><br><span class="line">    initial-scale: 初始的缩放比，为<span class="number">1</span>:<span class="number">1</span> --&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span><br><span class="line">    &lt;!-- 上述<span class="number">3</span>个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;用户信息管理系统&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- <span class="number">1</span>. 导入CSS的全局样式 --&gt;</span><br><span class="line">    &lt;link href=<span class="string">"css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">    &lt;!-- <span class="number">2</span>. jQuery导入，建议使用<span class="number">1.9</span>以上的版本 --&gt;</span><br><span class="line">    &lt;script src="js/jquery-2.1.0.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- <span class="number">3</span>. 导入bootstrap的js文件 --&gt;</span><br><span class="line">    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">        td, th &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</span><br><span class="line">    &lt;h3 style="text-align: center"&gt;用户信息列表&lt;/h3&gt;</span><br><span class="line">    &lt;table border=<span class="string">"1"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"table table-bordered table-hover"</span>&gt;</span><br><span class="line">        &lt;tr <span class="class"><span class="keyword">class</span></span>=<span class="string">"success"</span>&gt;</span><br><span class="line">            &lt;th&gt;编号&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;性别&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;籍贯&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;QQ&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;邮箱&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;操作&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;c:forEach items=<span class="string">"$&#123;users&#125;"</span> <span class="keyword">var</span>=<span class="string">"user"</span> varStatus=<span class="string">"s"</span>&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;$&#123;s.count&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;user.name&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;user.gender&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;user.age&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;user.address&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;user.qq&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;user.email&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;a class="btn btn-default btn-sm" href="update.html"&gt;修改&lt;/a&gt;&amp;nbsp;&lt;a class="btn btn-default btn-sm"</span><br><span class="line">                                                                                        href=""&gt;删除&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/c:forEach&gt;</span><br><span class="line"></span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td colspan="8" align="center"&gt;&lt;a class="btn btn-primary" href="add.html"&gt;添加联系人&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h5><p>代码文件很多，就不一一展示了</p>
+<p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200628143933710.png" alt="image-20200628143933710"></p>
+<h5 id="UserListServlet"><a href="#UserListServlet" class="headerlink" title="UserListServlet"></a>UserListServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.domain.User;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/userListServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserListServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//调用UserService完成查询</span></span><br><span class="line">        UserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        List&lt;User&gt; users = userService.findAll();</span><br><span class="line">        <span class="comment">//存入request域</span></span><br><span class="line">        req.setAttribute(<span class="string">"users"</span>,users);</span><br><span class="line">        <span class="comment">//转发到list.jsp</span></span><br><span class="line">        req.getRequestDispatcher(<span class="string">"/list.jsp"</span>).forward(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200628170505603.png" alt="image-20200628170505603"></p>
+<h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><h5 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h5><p>登录功能首先就是对表单提交的数据进行比对，验证码可以在生成的时候就把它存入到session中，然后在servlet中进行比对，其他的字段在通过调用dao层的JDBC操作数据库进行比对，最后把登录成功的用户信息存入session中</p>
+<h5 id="login-jsp"><a href="#login-jsp" class="headerlink" title="login.jsp"></a>login.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: tanglei</span><br><span class="line">  Date: <span class="number">2020</span>/<span class="number">6</span>/<span class="number">28</span></span><br><span class="line">  Time: 下午<span class="number">7</span>:<span class="number">37</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>/&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>/&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>/&gt;</span><br><span class="line">    &lt;title&gt;管理员登录&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- <span class="number">1</span>. 导入CSS的全局样式 --&gt;</span><br><span class="line">    &lt;link href=<span class="string">"css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">    &lt;!-- <span class="number">2</span>. jQuery导入，建议使用<span class="number">1.9</span>以上的版本 --&gt;</span><br><span class="line">    &lt;script src="js/jquery-2.1.0.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- <span class="number">3</span>. 导入bootstrap的js文件 --&gt;</span><br><span class="line">    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">        <span class="function">function <span class="title">refreshCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            let vcode = document.getElementById(<span class="string">"vcode"</span>);</span><br><span class="line">            vcode.src = <span class="string">"$&#123;pageContext.request.contextPath&#125;/checkCodeServlet?="</span> + <span class="keyword">new</span> Date().getTime();</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span> style=<span class="string">"width: 400px;"</span>&gt;</span><br><span class="line">    &lt;h3 style="text-align: center;"&gt;管理员登录&lt;/h3&gt;</span><br><span class="line">    &lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/loginServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="user"&gt;用户名：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"user"</span> placeholder=<span class="string">"请输入用户名"</span>/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="password"&gt;密码：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"password"</span> name=<span class="string">"password"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"password"</span> placeholder=<span class="string">"请输入密码"</span>/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-inline"</span>&gt;</span><br><span class="line">            &lt;label for="vcode"&gt;验证码：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> name=<span class="string">"verifycode"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"verifycode"</span> placeholder=<span class="string">"请输入验证码"</span></span><br><span class="line">                   style=<span class="string">"width: 120px;"</span>/&gt;</span><br><span class="line">            &lt;a href=<span class="string">"javascript:refreshCode()"</span>&gt;&lt;img src=<span class="string">"$&#123;pageContext.request.contextPath&#125;/checkCodeServlet"</span></span><br><span class="line">                                                    title="看不清点击刷新" id="vcode"/&gt;&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;hr/&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span> style=<span class="string">"text-align: center;"</span>&gt;</span><br><span class="line">            &lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn btn-primary"</span> type=<span class="string">"submit"</span> value=<span class="string">"登录"</span>&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 出错显示的信息框 --&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"alert alert-warning alert-dismissible"</span> role=<span class="string">"alert"</span>&gt;</span><br><span class="line">        &lt;button type=<span class="string">"button"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"close"</span> data-dismiss=<span class="string">"alert"</span>&gt;</span><br><span class="line">            &lt;span&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</span><br><span class="line">        &lt;strong&gt;$&#123;login_msg&#125;&lt;/strong&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="LoginServlet"><a href="#LoginServlet" class="headerlink" title="LoginServlet"></a>LoginServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.domain.User;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.beanutils.BeanUtils;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/loginServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//设置编码</span></span><br><span class="line">        req.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">        <span class="comment">//传递过来的验证码</span></span><br><span class="line">        String verifycode = req.getParameter(<span class="string">"verifycode"</span>);</span><br><span class="line">        HttpSession session = req.getSession();</span><br><span class="line">        <span class="comment">//session里面的验证码</span></span><br><span class="line">        String checkcode_server = (String) session.getAttribute(<span class="string">"CHECKCODE_SERVER"</span>);</span><br><span class="line">        session.removeAttribute(<span class="string">"CHECKCODE_SERVER"</span>);</span><br><span class="line">        <span class="comment">//比对验证码</span></span><br><span class="line">        <span class="keyword">if</span> (!checkcode_server.equalsIgnoreCase(verifycode)) &#123;</span><br><span class="line">            req.setAttribute(<span class="string">"login_msg"</span>, <span class="string">"验证码错误"</span>);</span><br><span class="line">            req.getRequestDispatcher(<span class="string">"/login.jsp"</span>).forward(req, resp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Map&lt;String, String[]&gt; parameterMap = req.getParameterMap();</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            BeanUtils.populate(user, parameterMap);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InvocationTargetException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        UserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        User loginUser = userService.login(user);</span><br><span class="line">        <span class="keyword">if</span>(loginUser != <span class="keyword">null</span>)&#123;</span><br><span class="line">            session.setAttribute(<span class="string">"user"</span>,loginUser);</span><br><span class="line">            resp.sendRedirect(req.getContextPath()+<span class="string">"/index.jsp"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            req.setAttribute(<span class="string">"login_msg"</span>, <span class="string">"登录失败"</span>);</span><br><span class="line">            req.getRequestDispatcher(<span class="string">"/login.jsp"</span>).forward(req, resp);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="CheckCodeServlet"><a href="#CheckCodeServlet" class="headerlink" title="CheckCodeServlet"></a>CheckCodeServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Font;</span><br><span class="line"><span class="keyword">import</span> java.awt.Graphics;</span><br><span class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 验证码</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/checkCodeServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CheckCodeServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span><span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//服务器通知浏览器不要缓存</span></span><br><span class="line">		response.setHeader(<span class="string">"pragma"</span>,<span class="string">"no-cache"</span>);</span><br><span class="line">		response.setHeader(<span class="string">"cache-control"</span>,<span class="string">"no-cache"</span>);</span><br><span class="line">		response.setHeader(<span class="string">"expires"</span>,<span class="string">"0"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//在内存中创建一个长80，宽30的图片，默认黑色背景</span></span><br><span class="line">		<span class="comment">//参数一：长</span></span><br><span class="line">		<span class="comment">//参数二：宽</span></span><br><span class="line">		<span class="comment">//参数三：颜色</span></span><br><span class="line">		<span class="keyword">int</span> width = <span class="number">80</span>;</span><br><span class="line">		<span class="keyword">int</span> height = <span class="number">30</span>;</span><br><span class="line">		BufferedImage image = <span class="keyword">new</span> BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//获取画笔</span></span><br><span class="line">		Graphics g = image.getGraphics();</span><br><span class="line">		<span class="comment">//设置画笔颜色为灰色</span></span><br><span class="line">		g.setColor(Color.GRAY);</span><br><span class="line">		<span class="comment">//填充图片</span></span><br><span class="line">		g.fillRect(<span class="number">0</span>,<span class="number">0</span>, width,height);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//产生4个随机验证码，12Ey</span></span><br><span class="line">		String checkCode = getCheckCode();</span><br><span class="line">		<span class="comment">//将验证码放入HttpSession中</span></span><br><span class="line">		request.getSession().setAttribute(<span class="string">"CHECKCODE_SERVER"</span>,checkCode);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//设置画笔颜色为黄色</span></span><br><span class="line">		g.setColor(Color.YELLOW);</span><br><span class="line">		<span class="comment">//设置字体的小大</span></span><br><span class="line">		g.setFont(<span class="keyword">new</span> Font(<span class="string">"黑体"</span>,Font.BOLD,<span class="number">24</span>));</span><br><span class="line">		<span class="comment">//向图片上写入验证码</span></span><br><span class="line">		g.drawString(checkCode,<span class="number">15</span>,<span class="number">25</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//将内存中的图片输出到浏览器</span></span><br><span class="line">		<span class="comment">//参数一：图片对象</span></span><br><span class="line">		<span class="comment">//参数二：图片的格式，如PNG,JPG,GIF</span></span><br><span class="line">		<span class="comment">//参数三：图片输出到哪里去</span></span><br><span class="line">		ImageIO.write(image,<span class="string">"PNG"</span>,response.getOutputStream());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 产生4位随机字符串 </span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> String <span class="title">getCheckCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String base = <span class="string">"0123456789ABCDEFGabcdefg"</span>;</span><br><span class="line">		<span class="keyword">int</span> size = base.length();</span><br><span class="line">		Random r = <span class="keyword">new</span> Random();</span><br><span class="line">		StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)&#123;</span><br><span class="line">			<span class="comment">//产生0到size-1的随机值</span></span><br><span class="line">			<span class="keyword">int</span> index = r.nextInt(size);</span><br><span class="line">			<span class="comment">//在base字符串中获取下标为index的字符</span></span><br><span class="line">			<span class="keyword">char</span> c = base.charAt(index);</span><br><span class="line">			<span class="comment">//将c放入到StringBuffer中去</span></span><br><span class="line">			sb.append(c);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> sb.toString();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.doGet(request,response);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200628204715757.png" alt="image-20200628204715757"></p>
+<h4 id="添加人员"><a href="#添加人员" class="headerlink" title="添加人员"></a>添加人员</h4><h5 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h5><p>添加操作就是把jsp提交的表单的数据向数据库里面存储，过程为jsp-&gt;servlet-&gt;service-&gt;dao</p>
+<h5 id="add-jsp"><a href="#add-jsp" class="headerlink" title="add.jsp"></a>add.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: tanglei</span><br><span class="line">  Date: <span class="number">2020</span>/<span class="number">6</span>/<span class="number">28</span></span><br><span class="line">  Time: 下午<span class="number">8</span>:<span class="number">55</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;!-- HTML5文档--&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;!-- 网页使用的语言 --&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!-- 指定字符集 --&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;!-- 使用Edge最新的浏览器的渲染方式 --&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">    &lt;!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。</span><br><span class="line">    width: 默认宽度与设备的宽度相同</span><br><span class="line">    initial-scale: 初始的缩放比，为<span class="number">1</span>:<span class="number">1</span> --&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span><br><span class="line">    &lt;!-- 上述<span class="number">3</span>个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;添加用户&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- <span class="number">1</span>. 导入CSS的全局样式 --&gt;</span><br><span class="line">    &lt;link href=<span class="string">"css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">    &lt;!-- <span class="number">2</span>. jQuery导入，建议使用<span class="number">1.9</span>以上的版本 --&gt;</span><br><span class="line">    &lt;script src="js/jquery-2.1.0.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- <span class="number">3</span>. 导入bootstrap的js文件 --&gt;</span><br><span class="line">    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</span><br><span class="line">    &lt;center&gt;&lt;h3&gt;添加联系人页面&lt;/h3&gt;&lt;/center&gt;</span><br><span class="line">    &lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/addUserServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="name"&gt;姓名：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"name"</span> name=<span class="string">"name"</span> placeholder=<span class="string">"请输入姓名"</span>&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label&gt;性别：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"男"</span> checked=<span class="string">"checked"</span>/&gt;男</span><br><span class="line">            &lt;input type=<span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"女"</span>/&gt;女</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="age"&gt;年龄：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"age"</span> name=<span class="string">"age"</span> placeholder=<span class="string">"请输入年龄"</span>&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="address"&gt;籍贯：&lt;/label&gt;</span><br><span class="line">            &lt;select name=<span class="string">"address"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"jiguan"</span>&gt;</span><br><span class="line">                &lt;option value="广东"&gt;广东&lt;/option&gt;</span><br><span class="line">                &lt;option value="广西"&gt;广西&lt;/option&gt;</span><br><span class="line">                &lt;option value="湖南"&gt;湖南&lt;/option&gt;</span><br><span class="line">            &lt;/select&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="qq"&gt;QQ：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> name=<span class="string">"qq"</span> placeholder=<span class="string">"请输入QQ号码"</span>/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="email"&gt;Email：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> name=<span class="string">"email"</span> placeholder=<span class="string">"请输入邮箱地址"</span>/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span> style=<span class="string">"text-align: center"</span>&gt;</span><br><span class="line">            &lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary"</span> type=<span class="string">"submit"</span> value=<span class="string">"提交"</span> /&gt;</span><br><span class="line">            &lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-default"</span> type=<span class="string">"reset"</span> value=<span class="string">"重置"</span> /&gt;</span><br><span class="line">            &lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-default"</span> type=<span class="string">"button"</span> value=<span class="string">"返回"</span> /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="AddUserServlet"><a href="#AddUserServlet" class="headerlink" title="AddUserServlet"></a>AddUserServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.domain.User;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.beanutils.BeanUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/addUserServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddUserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        req.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">        Map&lt;String, String[]&gt; parameterMap = req.getParameterMap();</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            BeanUtils.populate(user,parameterMap);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InvocationTargetException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        UserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        userService.addUser(user);</span><br><span class="line">        resp.sendRedirect(req.getContextPath()+<span class="string">"/userListServlet"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200628212933523.png" alt="image-20200628212933523"></p>
+<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><h5 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h5><p>首先我们需要在打开jsp页面的时候就查询到这样的一条记录，通过这一条记录的id作为表单的隐藏域，在servlet里面将数据进行保存即可</p>
+<h5 id="update-jsp"><a href="#update-jsp" class="headerlink" title="update.jsp"></a>update.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: tanglei</span><br><span class="line">  Date: <span class="number">2020</span>/<span class="number">6</span>/<span class="number">29</span></span><br><span class="line">  Time: 上午<span class="number">10</span>:<span class="number">44</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;%<span class="meta">@taglib</span> prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;!-- 网页使用的语言 --&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!-- 指定字符集 --&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span><br><span class="line">    &lt;title&gt;修改用户&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;link href=<span class="string">"css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">    &lt;script src="js/jquery-2.1.0.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span> style=<span class="string">"width: 400px;"</span>&gt;</span><br><span class="line">    &lt;h3 style="text-align: center;"&gt;修改联系人&lt;/h3&gt;</span><br><span class="line">    &lt;form action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/updateUserServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        &lt;!--  隐藏域 提交id--&gt;</span><br><span class="line">        &lt;input type=<span class="string">"hidden"</span> name=<span class="string">"id"</span> value=<span class="string">"$&#123;user.id&#125;"</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="name"&gt;姓名：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"name"</span> name=<span class="string">"name"</span>  value=<span class="string">"$&#123;user.name&#125;"</span> readonly=<span class="string">"readonly"</span> placeholder=<span class="string">"请输入姓名"</span> /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label&gt;性别：&lt;/label&gt;</span><br><span class="line">            &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;user.gender == '男'&#125;"</span>&gt;</span><br><span class="line">                &lt;input type=<span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"男"</span> checked /&gt;男</span><br><span class="line">                &lt;input type=<span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"女"</span>  /&gt;女</span><br><span class="line">            &lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line">            &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;user.gender == '女'&#125;"</span>&gt;</span><br><span class="line">                &lt;input type=<span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"男"</span>  /&gt;男</span><br><span class="line">                &lt;input type=<span class="string">"radio"</span> name=<span class="string">"gender"</span> value=<span class="string">"女"</span> checked  /&gt;女</span><br><span class="line">            &lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="age"&gt;年龄：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> value=<span class="string">"$&#123;user.age&#125;"</span> id=<span class="string">"age"</span>  name=<span class="string">"age"</span> placeholder=<span class="string">"请输入年龄"</span> /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="address"&gt;籍贯：&lt;/label&gt;</span><br><span class="line">            &lt;select name=<span class="string">"address"</span> id=<span class="string">"address"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> &gt;</span><br><span class="line">                &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;user.address == '陕西'&#125;"</span>&gt;</span><br><span class="line">                    &lt;option value="陕西" selected&gt;陕西&lt;/option&gt;</span><br><span class="line">                    &lt;option value="北京"&gt;北京&lt;/option&gt;</span><br><span class="line">                    &lt;option value="上海"&gt;上海&lt;/option&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line">                &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;user.address == '北京'&#125;"</span>&gt;</span><br><span class="line">                    &lt;option value="陕西" &gt;陕西&lt;/option&gt;</span><br><span class="line">                    &lt;option value="北京" selected&gt;北京&lt;/option&gt;</span><br><span class="line">                    &lt;option value="上海"&gt;上海&lt;/option&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line">                &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;user.address == '上海'&#125;"</span>&gt;</span><br><span class="line">                    &lt;option value="陕西" &gt;陕西&lt;/option&gt;</span><br><span class="line">                    &lt;option value="北京"&gt;北京&lt;/option&gt;</span><br><span class="line">                    &lt;option value="上海" selected&gt;上海&lt;/option&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">            &lt;/select&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="qq"&gt;QQ：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> id=<span class="string">"qq"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> value=<span class="string">"$&#123;user.qq&#125;"</span> name=<span class="string">"qq"</span> placeholder=<span class="string">"请输入QQ号码"</span>/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">            &lt;label for="email"&gt;Email：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">"text"</span> id=<span class="string">"email"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> value=<span class="string">"$&#123;user.email&#125;"</span> name=<span class="string">"email"</span> placeholder=<span class="string">"请输入邮箱地址"</span>/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span> style=<span class="string">"text-align: center"</span>&gt;</span><br><span class="line">            &lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-primary"</span> type=<span class="string">"submit"</span> value=<span class="string">"提交"</span> /&gt;</span><br><span class="line">            &lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-default"</span> type=<span class="string">"reset"</span> value=<span class="string">"重置"</span> /&gt;</span><br><span class="line">            &lt;a class="btn btn-default" href="$&#123;pageContext.request.contextPath&#125;/userListServlet"&gt;返回&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="FindUserServlet"><a href="#FindUserServlet" class="headerlink" title="FindUserServlet"></a>FindUserServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.domain.User;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/findUserServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FindUserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1.获取id</span></span><br><span class="line">        String id = req.getParameter(<span class="string">"id"</span>);</span><br><span class="line">        <span class="comment">//2.调用Service查询</span></span><br><span class="line">        UserService service = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        User user = service.findUserById(id);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.将user存入request</span></span><br><span class="line">        req.setAttribute(<span class="string">"user"</span>,user);</span><br><span class="line">        <span class="comment">//4.转发到update.jsp</span></span><br><span class="line">        req.getRequestDispatcher(<span class="string">"/update.jsp"</span>).forward(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="UpdateUserServlet"><a href="#UpdateUserServlet" class="headerlink" title="UpdateUserServlet"></a>UpdateUserServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.domain.User;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.beanutils.BeanUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/updateUserServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UpdateUserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1.设置编码</span></span><br><span class="line">        req.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">        <span class="comment">//2.获取map</span></span><br><span class="line">        Map&lt;String, String[]&gt; map = req.getParameterMap();</span><br><span class="line">        <span class="comment">//3.封装对象</span></span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            BeanUtils.populate(user,map);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InvocationTargetException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.调用Service修改</span></span><br><span class="line">        UserService service = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        service.updateUser(user);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5.跳转到查询所有Servlet</span></span><br><span class="line">        resp.sendRedirect(req.getContextPath()+<span class="string">"/userListServlet"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试-3"><a href="#测试-3" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200629111834002.png" alt="image-20200629111834002"></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><h5 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h5><p>通过获取到对应的id即可到servlet中处理，操作数据库删除，在进行删除的时候可出现提示框</p>
+<h5 id="DelUserServlet"><a href="#DelUserServlet" class="headerlink" title="DelUserServlet"></a>DelUserServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/delUserServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DelUserServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1.获取id</span></span><br><span class="line">        String id = req.getParameter(<span class="string">"id"</span>);</span><br><span class="line">        <span class="comment">//2.调用service删除</span></span><br><span class="line">        UserService service = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        service.deleteUser(id);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.跳转到查询所有Servlet</span></span><br><span class="line">        resp.sendRedirect(req.getContextPath()+<span class="string">"/userListServlet"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试-4"><a href="#测试-4" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200629114632231.png" alt="image-20200629114632231"></p>
+<h4 id="删除选择的多个"><a href="#删除选择的多个" class="headerlink" title="删除选择的多个"></a>删除选择的多个</h4><h5 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h5><p>和删除差不多，最主要是获取id的集合</p>
+<h5 id="DelSelectedServlet"><a href="#DelSelectedServlet" class="headerlink" title="DelSelectedServlet"></a>DelSelectedServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/delSelectedServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DelSelectedServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1.获取所有id</span></span><br><span class="line">        String[] ids = req.getParameterValues(<span class="string">"uid"</span>);</span><br><span class="line">        <span class="comment">//2.调用service删除</span></span><br><span class="line">        UserService service = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        service.delSelectedUser(ids);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.跳转查询所有Servlet</span></span><br><span class="line">        resp.sendRedirect(req.getContextPath()+<span class="string">"/userListServlet"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试-5"><a href="#测试-5" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200629121417352.png" alt="image-20200629121417352"></p>
+<h4 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h4><h5 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h5><p>在jsp中获取查询的总条数，每页显示的条数，当前的页码，将之传递给服务器，操作数据库进行查询</p>
+<h5 id="list-jsp-1"><a href="#list-jsp-1" class="headerlink" title="list.jsp"></a>list.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: tanglei</span><br><span class="line">  Date: <span class="number">2020</span>/<span class="number">6</span>/<span class="number">28</span></span><br><span class="line">  Time: 下午<span class="number">2</span>:<span class="number">15</span></span><br><span class="line">  To change <span class="keyword">this</span> template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;!-- 网页使用的语言 --&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;!-- 指定字符集 --&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;!-- 使用Edge最新的浏览器的渲染方式 --&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br><span class="line">    &lt;!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。</span><br><span class="line">    width: 默认宽度与设备的宽度相同</span><br><span class="line">    initial-scale: 初始的缩放比，为<span class="number">1</span>:<span class="number">1</span> --&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span><br><span class="line">    &lt;!-- 上述<span class="number">3</span>个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span><br><span class="line">    &lt;title&gt;用户信息管理系统&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- <span class="number">1</span>. 导入CSS的全局样式 --&gt;</span><br><span class="line">    &lt;link href=<span class="string">"css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">    &lt;!-- <span class="number">2</span>. jQuery导入，建议使用<span class="number">1.9</span>以上的版本 --&gt;</span><br><span class="line">    &lt;script src="js/jquery-2.1.0.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- <span class="number">3</span>. 导入bootstrap的js文件 --&gt;</span><br><span class="line">    &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">        td, th &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="function">function <span class="title">deleteUser</span><span class="params">(id)</span> </span>&#123;</span><br><span class="line">            <span class="comment">//用户安全提示</span></span><br><span class="line">            <span class="keyword">if</span> (confirm(<span class="string">"您确定要删除吗？"</span>)) &#123;</span><br><span class="line">                <span class="comment">//访问路径</span></span><br><span class="line">                location.href = <span class="string">"$&#123;pageContext.request.contextPath&#125;/delUserServlet?id="</span> + id;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        window.onload = function () &#123;</span><br><span class="line">            <span class="comment">//给删除选中按钮添加单击事件</span></span><br><span class="line">            document.getElementById(<span class="string">"delSelected"</span>).onclick = function () &#123;</span><br><span class="line">                <span class="keyword">if</span> (confirm(<span class="string">"您确定要删除选中条目吗？"</span>)) &#123;</span><br><span class="line">                    <span class="keyword">var</span> flag = <span class="keyword">false</span>;</span><br><span class="line">                    <span class="comment">//判断是否有选中条目</span></span><br><span class="line">                    <span class="keyword">var</span> cbs = document.getElementsByName(<span class="string">"uid"</span>);</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cbs.length; i++) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (cbs[i].checked) &#123;</span><br><span class="line">                            <span class="comment">//有一个条目选中了</span></span><br><span class="line">                            flag = <span class="keyword">true</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> (flag) &#123;<span class="comment">//有条目被选中</span></span><br><span class="line">                        <span class="comment">//表单提交</span></span><br><span class="line">                        document.getElementById(<span class="string">"form"</span>).submit();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//1.获取第一个cb</span></span><br><span class="line">            document.getElementById(<span class="string">"firstCb"</span>).onclick = function () &#123;</span><br><span class="line">                <span class="comment">//2.获取下边列表中所有的cb</span></span><br><span class="line">                <span class="keyword">var</span> cbs = document.getElementsByName(<span class="string">"uid"</span>);</span><br><span class="line">                <span class="comment">//3.遍历</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; cbs.length; i++) &#123;</span><br><span class="line">                    <span class="comment">//4.设置这些cbs[i]的checked状态 = firstCb.checked</span></span><br><span class="line">                    cbs[i].checked = <span class="keyword">this</span>.checked;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</span><br><span class="line">    &lt;h3 style="text-align: center"&gt;用户信息列表&lt;/h3&gt;</span><br><span class="line">    &lt;div style=<span class="string">"float: left;"</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;form <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-inline"</span> action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">                &lt;label for="exampleInputName2"&gt;姓名&lt;/label&gt;</span><br><span class="line">                &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span> value=<span class="string">"$&#123;condition.name[0]&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"exampleInputName2"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">                &lt;label for="exampleInputName3"&gt;籍贯&lt;/label&gt;</span><br><span class="line">                &lt;input type=<span class="string">"text"</span> name=<span class="string">"address"</span> value=<span class="string">"$&#123;condition.address[0]&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span></span><br><span class="line">                       id=<span class="string">"exampleInputName3"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">                &lt;label for="exampleInputEmail2"&gt;邮箱&lt;/label&gt;</span><br><span class="line">                &lt;input type=<span class="string">"text"</span> name=<span class="string">"email"</span> value=<span class="string">"$&#123;condition.email[0]&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span></span><br><span class="line">                       id=<span class="string">"exampleInputEmail2"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;button type="submit" class="btn btn-default"&gt;查询&lt;/button&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div style=<span class="string">"float: right;margin: 5px;"</span>&gt;</span><br><span class="line">        &lt;a class="btn btn-primary" href="$&#123;pageContext.request.contextPath&#125;/add.jsp"&gt;添加联系人&lt;/a&gt;</span><br><span class="line">        &lt;a class="btn btn-primary" href="javascript:void(0);" id="delSelected"&gt;删除选中&lt;/a&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;form id=<span class="string">"form"</span> action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/delSelectedServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">        &lt;table border=<span class="string">"1"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"table table-bordered table-hover"</span>&gt;</span><br><span class="line">            &lt;tr <span class="class"><span class="keyword">class</span></span>=<span class="string">"success"</span>&gt;</span><br><span class="line">                &lt;th&gt;&lt;input type="checkbox" id="firstCb"&gt;&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;编号&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;性别&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;籍贯&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;QQ&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;邮箱&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;操作&lt;/th&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;c:forEach items=<span class="string">"$&#123;pb.list&#125;"</span> <span class="keyword">var</span>=<span class="string">"user"</span> varStatus=<span class="string">"s"</span>&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;&lt;input type="checkbox" name="uid" value="$&#123;user.id&#125;"&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;s.count&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;user.name&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;user.gender&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;user.age&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;user.address&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;user.qq&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$&#123;user.email&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;</span><br><span class="line">                        &lt;a <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-default btn-sm"</span></span><br><span class="line">                           href="$&#123;pageContext.request.contextPath&#125;/findUserServlet?id=$&#123;user.id&#125;"&gt;修改&lt;/a&gt;&amp;nbsp;</span><br><span class="line">                        &lt;a class="btn btn-default btn-sm" href="javascript:deleteUser($&#123;user.id&#125;);"&gt;删除&lt;/a&gt;</span><br><span class="line">                    &lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/c:forEach&gt;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;nav aria-label=<span class="string">"Page navigation"</span>&gt;</span><br><span class="line">            &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"pagination"</span>&gt;</span><br><span class="line">                &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;pb.currentPage == 1&#125;"</span>&gt;</span><br><span class="line">                    &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"disabled"</span>&gt;</span><br><span class="line">                        &lt;a href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet?currentPage=1&amp;rows=5&amp;name=$&#123;condition.name[0]&#125;&amp;address=$&#123;condition.address[0]&#125;&amp;email=$&#123;condition.email[0]&#125;"</span></span><br><span class="line">                           aria-label=<span class="string">"Previous"</span>&gt;</span><br><span class="line">                            &lt;span aria-hidden="true"&gt;&amp;laquo;&lt;/span&gt;</span><br><span class="line">                        &lt;/a&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">                &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;pb.currentPage != 1&#125;"</span>&gt;</span><br><span class="line">                    &lt;li&gt;</span><br><span class="line">                        &lt;a href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet?currentPage=$&#123;pb.currentPage - 1&#125;&amp;rows=5&amp;name=$&#123;condition.name[0]&#125;&amp;address=$&#123;condition.address[0]&#125;&amp;email=$&#123;condition.email[0]&#125;"</span></span><br><span class="line">                           aria-label=<span class="string">"Previous"</span>&gt;</span><br><span class="line">                            &lt;span aria-hidden="true"&gt;&amp;laquo;&lt;/span&gt;</span><br><span class="line">                        &lt;/a&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line">                &lt;c:forEach begin=<span class="string">"1"</span> end=<span class="string">"$&#123;pb.totalPage&#125;"</span> <span class="keyword">var</span>=<span class="string">"i"</span>&gt;</span><br><span class="line">                    &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;pb.currentPage == i&#125;"</span>&gt;</span><br><span class="line">                        &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"active"</span>&gt;&lt;a</span><br><span class="line">                                href="$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet?currentPage=$&#123;i&#125;&amp;rows=5&amp;name=$&#123;condition.name[0]&#125;&amp;address=$&#123;condition.address[0]&#125;&amp;email=$&#123;condition.email[0]&#125;"&gt;$&#123;i&#125;&lt;/a&gt;</span><br><span class="line">                        &lt;/li&gt;</span><br><span class="line">                    &lt;/c:if&gt;</span><br><span class="line">                    &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;pb.currentPage != i&#125;"</span>&gt;</span><br><span class="line">                        &lt;li&gt;</span><br><span class="line">                            &lt;a href="$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet?currentPage=$&#123;i&#125;&amp;rows=5&amp;name=$&#123;condition.name[0]&#125;&amp;address=$&#123;condition.address[0]&#125;&amp;email=$&#123;condition.email[0]&#125;"&gt;$&#123;i&#125;&lt;/a&gt;</span><br><span class="line">                        &lt;/li&gt;</span><br><span class="line">                    &lt;/c:if&gt;</span><br><span class="line">                &lt;/c:forEach&gt;</span><br><span class="line">                &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;pb.currentPage == pb.totalPage&#125;"</span>&gt;</span><br><span class="line">                    &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"disabled"</span>&gt;</span><br><span class="line">                        &lt;a href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet?currentPage=$&#123;pb.totalPage&#125;&amp;rows=5&amp;name=$&#123;condition.name[0]&#125;&amp;address=$&#123;condition.address[0]&#125;&amp;email=$&#123;condition.email[0]&#125;"</span></span><br><span class="line">                           aria-label=<span class="string">"Next"</span>&gt;</span><br><span class="line">                            &lt;span aria-hidden="true"&gt;&amp;raquo;&lt;/span&gt;</span><br><span class="line">                        &lt;/a&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">                &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;pb.currentPage != pb.totalPage&#125;"</span>&gt;</span><br><span class="line">                    &lt;li&gt;</span><br><span class="line">                        &lt;a href=<span class="string">"$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet?currentPage=$&#123;pb.currentPage + 1&#125;&amp;rows=5&amp;name=$&#123;condition.name[0]&#125;&amp;address=$&#123;condition.address[0]&#125;&amp;email=$&#123;condition.email[0]&#125;"</span></span><br><span class="line">                           aria-label=<span class="string">"Next"</span>&gt;</span><br><span class="line">                            &lt;span aria-hidden="true"&gt;&amp;raquo;&lt;/span&gt;</span><br><span class="line">                        &lt;/a&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line">                &lt;span style=<span class="string">"font-size: 25px;margin-left: 5px;"</span>&gt;</span><br><span class="line">                    共$&#123;pb.totalCount&#125;条记录，共$&#123;pb.totalPage&#125;页</span><br><span class="line">                &lt;/span&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/nav&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="FindUserByPageServlet"><a href="#FindUserByPageServlet" class="headerlink" title="FindUserByPageServlet"></a>FindUserByPageServlet</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.guizimo.little.web.servlet;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.domain.PageBean;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.domain.User;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.UserService;</span><br><span class="line"><span class="keyword">import</span> cn.guizimo.little.service.impl.UserServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/findUserByPageServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FindUserByPageServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        request.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1.获取参数</span></span><br><span class="line">        String currentPage = request.getParameter(<span class="string">"currentPage"</span>);<span class="comment">//当前页码</span></span><br><span class="line">        String rows = request.getParameter(<span class="string">"rows"</span>);<span class="comment">//每页显示条数</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(currentPage == <span class="keyword">null</span> || <span class="string">""</span>.equals(currentPage))&#123;</span><br><span class="line">            currentPage = <span class="string">"1"</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(rows == <span class="keyword">null</span> || <span class="string">""</span>.equals(rows))&#123;</span><br><span class="line">            rows = <span class="string">"5"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//获取条件查询参数</span></span><br><span class="line">        Map&lt;String, String[]&gt; condition = request.getParameterMap();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.调用service查询</span></span><br><span class="line">        UserService service = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        PageBean&lt;User&gt; pb = service.findUserByPage(currentPage,rows,condition);</span><br><span class="line"></span><br><span class="line">        System.out.println(pb);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.将PageBean存入request</span></span><br><span class="line">        request.setAttribute(<span class="string">"pb"</span>,pb);</span><br><span class="line">        request.setAttribute(<span class="string">"condition"</span>,condition);<span class="comment">//将查询条件存入request</span></span><br><span class="line">        <span class="comment">//4.转发到list.jsp</span></span><br><span class="line">        request.getRequestDispatcher(<span class="string">"/list.jsp"</span>).forward(request,response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试-6"><a href="#测试-6" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200629190257416.png" alt="image-20200629190257416"></p>
+<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><h5 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h5><p>主要是在sql语句的编写</p>
+<h5 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"float: left;"</span>&gt;</span><br><span class="line">        &lt;form <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-inline"</span> action=<span class="string">"$&#123;pageContext.request.contextPath&#125;/findUserByPageServlet"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">                &lt;label for="exampleInputName2"&gt;姓名&lt;/label&gt;</span><br><span class="line">                &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span> value=<span class="string">"$&#123;condition.name[0]&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"exampleInputName2"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">                &lt;label for="exampleInputName3"&gt;籍贯&lt;/label&gt;</span><br><span class="line">                &lt;input type=<span class="string">"text"</span> name=<span class="string">"address"</span> value=<span class="string">"$&#123;condition.address[0]&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span></span><br><span class="line">                       id=<span class="string">"exampleInputName3"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</span><br><span class="line">                &lt;label for="exampleInputEmail2"&gt;邮箱&lt;/label&gt;</span><br><span class="line">                &lt;input type=<span class="string">"text"</span> name=<span class="string">"email"</span> value=<span class="string">"$&#123;condition.email[0]&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span></span><br><span class="line">                       id=<span class="string">"exampleInputEmail2"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;button type="submit" class="btn btn-default"&gt;查询&lt;/button&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="dao层方法"><a href="#dao层方法" class="headerlink" title="dao层方法"></a>dao层方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findTotalCount</span><span class="params">(Map&lt;String, String[]&gt; condition)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1.定义模板初始化sql</span></span><br><span class="line">        String sql = <span class="string">"select count(*) from user where 1 = 1 "</span>;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(sql);</span><br><span class="line">        <span class="comment">//2.遍历map</span></span><br><span class="line">        Set&lt;String&gt; keySet = condition.keySet();</span><br><span class="line">        <span class="comment">//定义参数的集合</span></span><br><span class="line">        List&lt;Object&gt; params = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String key : keySet) &#123;</span><br><span class="line">            <span class="comment">//排除分页条件参数</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="string">"currentPage"</span>.equals(key) || <span class="string">"rows"</span>.equals(key))&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//获取value</span></span><br><span class="line">            String value = condition.get(key)[<span class="number">0</span>];</span><br><span class="line">            <span class="comment">//判断value是否有值</span></span><br><span class="line">            <span class="keyword">if</span>(value != <span class="keyword">null</span> &amp;&amp; !<span class="string">""</span>.equals(value))&#123;</span><br><span class="line">                <span class="comment">//有值</span></span><br><span class="line">                sb.append(<span class="string">" and "</span>+key+<span class="string">" like ? "</span>);</span><br><span class="line">                params.add(<span class="string">"%"</span>+value+<span class="string">"%"</span>);<span class="comment">//？条件的值</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sb.toString());</span><br><span class="line">        System.out.println(params);</span><br><span class="line">        <span class="keyword">return</span> template.queryForObject(sb.toString(),Integer<span class="class">.<span class="keyword">class</span>,<span class="title">params</span>.<span class="title">toArray</span>())</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findByPage</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> rows, Map&lt;String, String[]&gt; condition)</span> </span>&#123;</span><br><span class="line">        String sql = <span class="string">"select * from user  where 1 = 1 "</span>;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder(sql);</span><br><span class="line">        <span class="comment">//2.遍历map</span></span><br><span class="line">        Set&lt;String&gt; keySet = condition.keySet();</span><br><span class="line">        <span class="comment">//定义参数的集合</span></span><br><span class="line">        List&lt;Object&gt; params = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">        <span class="keyword">for</span> (String key : keySet) &#123;</span><br><span class="line">            <span class="comment">//排除分页条件参数</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="string">"currentPage"</span>.equals(key) || <span class="string">"rows"</span>.equals(key))&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//获取value</span></span><br><span class="line">            String value = condition.get(key)[<span class="number">0</span>];</span><br><span class="line">            <span class="comment">//判断value是否有值</span></span><br><span class="line">            <span class="keyword">if</span>(value != <span class="keyword">null</span> &amp;&amp; !<span class="string">""</span>.equals(value))&#123;</span><br><span class="line">                <span class="comment">//有值</span></span><br><span class="line">                sb.append(<span class="string">" and "</span>+key+<span class="string">" like ? "</span>);</span><br><span class="line">                params.add(<span class="string">"%"</span>+value+<span class="string">"%"</span>);<span class="comment">//？条件的值</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//添加分页查询</span></span><br><span class="line">        sb.append(<span class="string">" limit ?,? "</span>);</span><br><span class="line">        <span class="comment">//添加分页查询参数值</span></span><br><span class="line">        params.add(start);</span><br><span class="line">        params.add(rows);</span><br><span class="line">        sql = sb.toString();</span><br><span class="line">        System.out.println(sql);</span><br><span class="line">        System.out.println(params);</span><br><span class="line">        <span class="keyword">return</span> template.query(sql,<span class="keyword">new</span> BeanPropertyRowMapper&lt;User&gt;(User<span class="class">.<span class="keyword">class</span>),<span class="title">params</span>.<span class="title">toArray</span>())</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="测试-7"><a href="#测试-7" class="headerlink" title="测试"></a>测试</h5><p><img src="https://guizimo.oss-cn-shanghai.aliyuncs.com/img/image-20200629191252508.png" alt="image-20200629191252508"></p>
+<p><strong>感谢</strong></p>
+<blockquote>
+<p>黑马程序员</p>
+<p>万能的网络</p>
+<p>以及勤劳的自己</p>
+</blockquote>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://tangleia.github.io/2020/06/29/Java--%E5%B0%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%99%BB%E5%BD%95%E3%80%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E3%80%81%E5%88%86%E9%A1%B5%E3%80%81%E6%90%9C%E7%B4%A2%EF%BC%89/>https://tangleia.github.io/2020/06/29/Java--%E5%B0%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%99%BB%E5%BD%95%E3%80%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E3%80%81%E5%88%86%E9%A1%B5%E3%80%81%E6%90%9C%E7%B4%A2%EF%BC%89/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-29T23:25:28+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年7月29日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangleia.github.io/2020/06/29/Java--%E5%B0%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%99%BB%E5%BD%95%E3%80%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E3%80%81%E5%88%86%E9%A1%B5%E3%80%81%E6%90%9C%E7%B4%A2%EF%BC%89/&title=Java--小项目（登录、增删改查、分页、搜索） - 归子莫的博客&summary=Java–小项目（登录、增删改查、分页、搜索）"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tangleia.github.io/2020/06/29/Java--%E5%B0%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%99%BB%E5%BD%95%E3%80%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E3%80%81%E5%88%86%E9%A1%B5%E3%80%81%E6%90%9C%E7%B4%A2%EF%BC%89/&title=Java--小项目（登录、增删改查、分页、搜索） - 归子莫的博客&summary=Java–小项目（登录、增删改查、分页、搜索）"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://tangleia.github.io/2020/06/29/Java--%E5%B0%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E7%99%BB%E5%BD%95%E3%80%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E3%80%81%E5%88%86%E9%A1%B5%E3%80%81%E6%90%9C%E7%B4%A2%EF%BC%89/&title=Java--小项目（登录、增删改查、分页、搜索） - 归子莫的博客&summary=Java–小项目（登录、增删改查、分页、搜索）"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/06/30/%E6%9F%A5%E6%89%BE--%E7%BA%BF%E6%80%A7%E6%9F%A5%E6%89%BE%EF%BC%88Java%EF%BC%89/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>查找--线性查找（Java）</p>
+                <p class='content'>查找–线性查找（Java）
+
+博客说明
+
+文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！
+
+介绍线性查找又称顺序查找，是一种最简单的...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/06/28/JSP--EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/'>
+                <p class='title'>JSP--EL表达式<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>JSP–EL表达式
+
+博客说明
+
+文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！
+
+概念Expression Language 表达...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Java--小项目（登录、增删改查、分页、搜索）',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java–小项目（登录、增删改查、分页、搜索）"><span class="toc-text">Java–小项目（登录、增删改查、分页、搜索）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#技术选型"><span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#功能介绍"><span class="toc-text">功能介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建JavaWeb项目"><span class="toc-text">创建JavaWeb项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#导入依赖"><span class="toc-text">导入依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加页面文件"><span class="toc-text">添加页面文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库"><span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#列表展示"><span class="toc-text">列表展示</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#list-jsp"><span class="toc-text">list.jsp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#servlet"><span class="toc-text">servlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UserListServlet"><span class="toc-text">UserListServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#登录"><span class="toc-text">登录</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#login-jsp"><span class="toc-text">login.jsp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LoginServlet"><span class="toc-text">LoginServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CheckCodeServlet"><span class="toc-text">CheckCodeServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试-1"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加人员"><span class="toc-text">添加人员</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路-2"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#add-jsp"><span class="toc-text">add.jsp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AddUserServlet"><span class="toc-text">AddUserServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试-2"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改"><span class="toc-text">修改</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路-3"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#update-jsp"><span class="toc-text">update.jsp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FindUserServlet"><span class="toc-text">FindUserServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UpdateUserServlet"><span class="toc-text">UpdateUserServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试-3"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除"><span class="toc-text">删除</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路-4"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DelUserServlet"><span class="toc-text">DelUserServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试-4"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删除选择的多个"><span class="toc-text">删除选择的多个</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路-5"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DelSelectedServlet"><span class="toc-text">DelSelectedServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试-5"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分页"><span class="toc-text">分页</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路-6"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#list-jsp-1"><span class="toc-text">list.jsp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FindUserByPageServlet"><span class="toc-text">FindUserByPageServlet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试-6"><span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件查询"><span class="toc-text">条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#思路-7"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#jsp"><span class="toc-text">jsp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#dao层方法"><span class="toc-text">dao层方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#测试-7"><span class="toc-text">测试</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:17680262548@163.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Tangleia"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
