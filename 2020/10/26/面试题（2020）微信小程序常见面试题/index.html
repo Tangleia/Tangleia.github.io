@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>面试题（2020）微信小程序常见面试题 - 归子莫的博客</title>
+  
+  
+    <meta name="description" content="面试题（2020）微信小程序常见面试题">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://www.guizimo.top/index/logo.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div class="cover-wrapper">
+    
+      <cover class='cover post half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">归子莫的博客</p>
+    
+    
+      <p class="subtitle">「笔杆揭不起，绘不出青烟别春泥  ————归子莫」</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-rss fa-fw'></i>博客
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>归档
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/friends/"
+                
+                
+                id="friends">
+                <i class='fas fa-link fa-fw'></i>友链
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/about/"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            VOLANTIS <b><sup style='color:#3AA757'>2.6.6</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/10/26/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882020%EF%BC%89%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/">
+      面试题（2020）微信小程序常见面试题
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://Tangleia.github.io" rel="nofollow">
+    <img src="https://www.guizimo.top/index/logo.png">
+    <p>归子莫</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年10月26日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h2 id="面试题（2020）微信小程序常见面试题"><a href="#面试题（2020）微信小程序常见面试题" class="headerlink" title="面试题（2020）微信小程序常见面试题"></a>面试题（2020）微信小程序常见面试题</h2><a id="more"></a>
+
+<p><strong>博客说明</strong></p>
+<blockquote>
+<p>文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！</p>
+</blockquote>
+<h4 id="1、微信的小程序的主要文件"><a href="#1、微信的小程序的主要文件" class="headerlink" title="1、微信的小程序的主要文件"></a>1、微信的小程序的主要文件</h4><ul>
+<li>WXML——模板文件</li>
+<li>JSON——配置/设置文件，如标题,tabbar,页面注册</li>
+<li>WXSS——样式文件，样式可直接用import导入</li>
+<li>JS——脚本逻辑文件，逻辑处理，网络请求</li>
+<li>app.json——配置文件入口，整个小程序的全局配置，网络超时时间、底部tab、页面路径，window字段是小程序所有页面的顶部背景颜色、文字颜色</li>
+<li>app.js——可以没有内容，可以在里边监听生命周期函数、声明全局变量</li>
+<li>app.wxss——全局配置样式文件</li>
+</ul>
+<h4 id="2、数据请求怎么封装"><a href="#2、数据请求怎么封装" class="headerlink" title="2、数据请求怎么封装"></a>2、数据请求怎么封装</h4><ul>
+<li>将所有的接口放在统一的js文件中并导出（或者将请求地址、头、方法在一个js文件里统一定义为一个常量并导出）</li>
+<li>在app.js创建封装请求数据的方法</li>
+<li>在子页面中调用封装的方法请求数据</li>
+</ul>
+<h4 id="3、参数传递"><a href="#3、参数传递" class="headerlink" title="3、参数传递"></a>3、参数传递</h4><ul>
+<li>给HTML元素中添加data-*属性来传递需要的值，之后通过e.currentTarget.dataset或onload的param参数获取。注意不能有大写字母，不可以存放对象</li>
+<li>跳转页面时通过navigator传递需要的参数值</li>
+<li>设置id的方法标识，通过e.currentTarget.id获取设置的id值，然后通过设置全局变量的方法来传递数值</li>
+</ul>
+<h4 id="4、生命周期函数"><a href="#4、生命周期函数" class="headerlink" title="4、生命周期函数"></a><strong>4、生命周期函数</strong></h4><ul>
+<li>onLoad——页面加载，调一次</li>
+<li>onShow——页面显示，每次打开页面都调用</li>
+<li>onReady——初次渲染完成，调一次</li>
+<li>onHide——页面隐藏，当navigateTo或底部tab切换时调用</li>
+<li>onUnload——页面卸载，当redirectTo或navigateBack时调用</li>
+</ul>
+<h4 id="5、小程序的双向绑定和vue哪里不一样"><a href="#5、小程序的双向绑定和vue哪里不一样" class="headerlink" title="5、小程序的双向绑定和vue哪里不一样"></a><strong>5、小程序的双向绑定和vue哪里不一样</strong></h4><ul>
+<li>小程序直接this.data的属性是不可以同步到视图的，必须调用this.setData({})</li>
+</ul>
+<h4 id="6、1px-2rpx"><a href="#6、1px-2rpx" class="headerlink" title="6、1px = 2rpx"></a><strong>6、1px = 2rpx</strong></h4><h4 id="7、如何自定义组件（弹窗）"><a href="#7、如何自定义组件（弹窗）" class="headerlink" title="7、如何自定义组件（弹窗）"></a><strong>7、如何自定义组件</strong>（弹窗）</h4><ul>
+<li>先创建一个components文件夹，用来存放所有自定义组件的，目录结构依然是js,wxml,json,wxss</li>
+</ul>
+<p>基本配置：</p>
+<ul>
+<li>.json——进行自定义组件声明</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;component&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用组件：</p>
+<ul>
+<li>假如在index.wxml中使用这个自定义的组件，首先在index.json中进行声明</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">  &quot;usingComponents&quot;: &#123;  </span><br><span class="line">      &quot;toastdemo&quot;: &quot;&#x2F;components&#x2F;toastdemo&#x2F;toastdemo&quot;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接着在index.wxml中引用</li>
+<li>然后在index.js进行配置</li>
+<li>使用时直接执行this.toastdemo.showToast(‘弹框组件调用成功’,2000)就可以了</li>
+</ul>
+<h4 id="8、小程序内的页面跳转"><a href="#8、小程序内的页面跳转" class="headerlink" title="8、小程序内的页面跳转"></a><strong>8、小程序内的页面跳转</strong></h4><ul>
+<li>wx.navigateTo——保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面（参数必须为字符串）</li>
+<li>wx.redirectTo——关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面</li>
+<li>wx.switchTab——跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，路径后不能带参数</li>
+<li>wx.navigateBack——关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages() 获取当前的页面栈，决定需要返回几层</li>
+<li>wx.reLaunch——关闭所有页面，打开到应用内的某个页面</li>
+</ul>
+<h4 id="9、小程序和Vue写法的区别"><a href="#9、小程序和Vue写法的区别" class="headerlink" title="9、小程序和Vue写法的区别"></a><strong>9、小程序和Vue写法的区别</strong></h4><ul>
+<li>循环遍历：小程序是wx:for=”list”，vue是v-for=”inforin list”</li>
+<li>调用data模型：小程序是this.data.unifo，vue是this.unifo</li>
+<li>给模型赋值：小程序是this.setData({unifo:1})，vue是直接this.unifo=1</li>
+</ul>
+<h4 id="10、小程序的双向绑定和vue哪里不一样"><a href="#10、小程序的双向绑定和vue哪里不一样" class="headerlink" title="10、小程序的双向绑定和vue哪里不一样"></a><strong>10、小程序的双向绑定和vue哪里不一样</strong></h4><ul>
+<li>小程序直接this.data的属性是不可以同步到视图的，必须调用this.setData({})</li>
+</ul>
+<h4 id="11、小程序的优点和缺点"><a href="#11、小程序的优点和缺点" class="headerlink" title="11、小程序的优点和缺点"></a><strong>11、小程序的优点和缺点</strong></h4><h5 id="小程序的优点"><a href="#小程序的优点" class="headerlink" title="小程序的优点"></a><strong>小程序的优点</strong></h5><ul>
+<li>无需下载</li>
+<li>打开速度快</li>
+<li>开发成本低</li>
+<li>为用户提供良好的安全保障。发布有一套严格的审查流程，不能通过审查的程序无法发布上线</li>
+<li>服务请求快</li>
+</ul>
+<h5 id="小程序的缺点"><a href="#小程序的缺点" class="headerlink" title="小程序的缺点"></a><strong>小程序的缺点</strong></h5><ul>
+<li>依托微信，不能开发后台管理功能</li>
+<li>大小限制不能超过2M，不能打开超过5个层级的页面</li>
+</ul>
+<h4 id="12、简述小程序原理"><a href="#12、简述小程序原理" class="headerlink" title="12、简述小程序原理"></a><strong>12、简述小程序原理</strong></h4><ul>
+<li>小程序分为两个部分webview和appService，webview用来展现UI，appService用来处理业务逻辑、数据及接口调用，它们在两个进程中运行，通过系统层JSBridge实现通信，完成UI渲染、事件处理。</li>
+</ul>
+<h4 id="13、提高小程序的应用速度的方法"><a href="#13、提高小程序的应用速度的方法" class="headerlink" title="13、提高小程序的应用速度的方法"></a><strong>13、提高小程序的应用速度的方法</strong></h4><ul>
+<li>减少默认data的大小</li>
+<li>组件化方案，公用的如弹框等写个自定义的组件，然后调用</li>
+</ul>
+<h4 id="14、简述小程序原理"><a href="#14、简述小程序原理" class="headerlink" title="14、简述小程序原理"></a><strong>14、简述小程序原理</strong></h4><ul>
+<li>小程序分为两个部分webview和appService，webview用来展现UI，appService用来处理业务逻辑、数据及接口调用，它们在两个进程中运行，通过系统层JSBridge实现通信，完成UI渲染、事件处理</li>
+</ul>
+<h4 id="15、setData的回调函数"><a href="#15、setData的回调函数" class="headerlink" title="15、setData的回调函数"></a><strong>15、setData的回调函数</strong></h4><p>微信小程序的setData实现是和react的setData实现类似的，所以它也是一个异步函数，并且有回调函数的参数，当然平时小量数据我们可能并没有感觉到它的异步，但是为了确保逻辑的正确执行，在需要用到setData后 data里的数据的步骤，请写入setData的回调函数中，如下示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.setData(&#123;</span><br><span class="line">  a: this.data.a++</span><br><span class="line">  &#125;,()&#x3D;&gt;&#123;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="16、如何实现下拉刷新"><a href="#16、如何实现下拉刷新" class="headerlink" title="16、如何实现下拉刷新"></a><strong>16、如何实现下拉刷新</strong></h4><ul>
+<li>先在app.json或page.json中配置enablePullDownRefresh:true</li>
+<li>page里用onPullDownRefresh函数，在下拉刷新时执行</li>
+<li>在下拉函数执行时发起数据请求，请求返回后，调用wx.stopPullDownRefresh停止下拉刷新的状态</li>
+</ul>
+<h4 id="17、bindtap和catchtap的区别是什么"><a href="#17、bindtap和catchtap的区别是什么" class="headerlink" title="17、bindtap和catchtap的区别是什么"></a><strong>17、bindtap和catchtap的区别是什么</strong></h4><ul>
+<li>bindtap不会阻止冒泡事件，catchtap阻止冒泡</li>
+</ul>
+<h4 id="18、微信小程序与H5的区别？"><a href="#18、微信小程序与H5的区别？" class="headerlink" title="18、微信小程序与H5的区别？"></a>18、微信小程序与H5的区别？</h4><p>①运行环境不同（小程序在微信运行，h5在浏览器运行）；</p>
+<p>②开发成本不同（h5需要兼容不同的浏览器）；</p>
+<p>③获取系统权限不同（系统级权限可以和小程序无缝衔接）；</p>
+<p>④应用在生产环境的运行流畅度（h5需不断对项目优化来提高用户体验）；</p>
+<h4 id="19、小程序关联微信公众号如何确定用户的唯一性？"><a href="#19、小程序关联微信公众号如何确定用户的唯一性？" class="headerlink" title="19、小程序关联微信公众号如何确定用户的唯一性？"></a>19、小程序关联微信公众号如何确定用户的唯一性？</h4><p>使用wx.getUserInfo方法 withCredentials为true时，可获取encryptedData，里面有union_id.后端需要进行对称解密。</p>
+<h4 id="20、webview中的页面怎么跳回小程序中"><a href="#20、webview中的页面怎么跳回小程序中" class="headerlink" title="20、webview中的页面怎么跳回小程序中"></a><strong>20、webview中的页面怎么跳回小程序中</strong></h4><ul>
+<li>先在管理后台配置域名白名单，</li>
+<li>然后引入jweixin-1.3.2.js（<a href="https://res.wx.qq.com/open/js/jweixin-1.3.0.js）" target="_blank" rel="noopener">https://res.wx.qq.com/open/js/jweixin-1.3.0.js）</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.miniProgram.navigateTo(&#123;url: &#39;&#x2F;pages&#x2F;login&#x2F;login&#39;+&#39;$params&#39;&#125;)</span><br><span class="line">wx.miniProgram.navigateTo(&#123;url: &#39;&#x2F;path&#x2F;to&#x2F;page&#39;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="21、webview的页面怎么跳转到小程序导航的页面？"><a href="#21、webview的页面怎么跳转到小程序导航的页面？" class="headerlink" title="21、webview的页面怎么跳转到小程序导航的页面？"></a><strong>21、webview的页面怎么跳转到小程序导航的页面？</strong></h4><p>小程序导航的页面可以通过switchTab，但默认情况是不会重新加载数据的。若需加载新数据，则在success属性中加入以下代码即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">success: function (e) &#123;</span><br><span class="line">  var page &#x3D; getCurrentPages().pop();</span><br><span class="line">  if (page &#x3D;&#x3D; undefined || page &#x3D;&#x3D; null) return;</span><br><span class="line">  page.onLoad();</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;webview的页面，则通过</span><br><span class="line">wx.miniProgram.switchTab(&#123;</span><br><span class="line">  url: &#39;&#x2F;pages&#x2F;index&#x2F;index&#39;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="22、小程序和小程序之间的跳转"><a href="#22、小程序和小程序之间的跳转" class="headerlink" title="22、小程序和小程序之间的跳转"></a><strong>22、小程序和小程序之间的跳转</strong></h4><ul>
+<li>在同一主体公众号上关联2个小程序appid，</li>
+<li>用<strong>navigator</strong>，对应设置一些属性即可</li>
+<li><strong>target：miniProgram——其他小程序</strong></li>
+<li>target：self——当前小程序</li>
+</ul>
+<p><strong>感谢</strong></p>
+<blockquote>
+<p>万能的网络</p>
+<p>以及勤劳的自己，<a href="https://blog.guizimo.top/" target="_blank" rel="noopener">个人博客</a>，<a href="https://tangleia.github.io/">GitHub</a></p>
+<p><img src="https://www.guizimo.top/images/blog.png" alt="微信公众号"></p>
+</blockquote>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://tangleia.github.io/2020/10/26/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882020%EF%BC%89%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/>https://tangleia.github.io/2020/10/26/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882020%EF%BC%89%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-27T11:55:25+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年10月27日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangleia.github.io/2020/10/26/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882020%EF%BC%89%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/&title=面试题（2020）微信小程序常见面试题 - 归子莫的博客&summary=面试题（2020）微信小程序常见面试题"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tangleia.github.io/2020/10/26/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882020%EF%BC%89%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/&title=面试题（2020）微信小程序常见面试题 - 归子莫的博客&summary=面试题（2020）微信小程序常见面试题"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://tangleia.github.io/2020/10/26/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882020%EF%BC%89%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/&title=面试题（2020）微信小程序常见面试题 - 归子莫的博客&summary=面试题（2020）微信小程序常见面试题"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/09/27/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Js%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/'>
+                <p class='title'>前端面试—Js面试题汇总<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>前端面试—Js面试题汇总
+
+博客说明
+
+文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！
+
+1、有几种方式可以实现继承JS里常用的有如...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '面试题（2020）微信小程序常见面试题',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#面试题（2020）微信小程序常见面试题"><span class="toc-text">面试题（2020）微信小程序常见面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、微信的小程序的主要文件"><span class="toc-text">1、微信的小程序的主要文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、数据请求怎么封装"><span class="toc-text">2、数据请求怎么封装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、参数传递"><span class="toc-text">3、参数传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、生命周期函数"><span class="toc-text">4、生命周期函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、小程序的双向绑定和vue哪里不一样"><span class="toc-text">5、小程序的双向绑定和vue哪里不一样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、1px-2rpx"><span class="toc-text">6、1px &#x3D; 2rpx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、如何自定义组件（弹窗）"><span class="toc-text">7、如何自定义组件（弹窗）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、小程序内的页面跳转"><span class="toc-text">8、小程序内的页面跳转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9、小程序和Vue写法的区别"><span class="toc-text">9、小程序和Vue写法的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10、小程序的双向绑定和vue哪里不一样"><span class="toc-text">10、小程序的双向绑定和vue哪里不一样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11、小程序的优点和缺点"><span class="toc-text">11、小程序的优点和缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#小程序的优点"><span class="toc-text">小程序的优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#小程序的缺点"><span class="toc-text">小程序的缺点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12、简述小程序原理"><span class="toc-text">12、简述小程序原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13、提高小程序的应用速度的方法"><span class="toc-text">13、提高小程序的应用速度的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14、简述小程序原理"><span class="toc-text">14、简述小程序原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15、setData的回调函数"><span class="toc-text">15、setData的回调函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16、如何实现下拉刷新"><span class="toc-text">16、如何实现下拉刷新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17、bindtap和catchtap的区别是什么"><span class="toc-text">17、bindtap和catchtap的区别是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18、微信小程序与H5的区别？"><span class="toc-text">18、微信小程序与H5的区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19、小程序关联微信公众号如何确定用户的唯一性？"><span class="toc-text">19、小程序关联微信公众号如何确定用户的唯一性？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20、webview中的页面怎么跳回小程序中"><span class="toc-text">20、webview中的页面怎么跳回小程序中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21、webview的页面怎么跳转到小程序导航的页面？"><span class="toc-text">21、webview的页面怎么跳转到小程序导航的页面？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22、小程序和小程序之间的跳转"><span class="toc-text">22、小程序和小程序之间的跳转</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:17680262548@163.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Tangleia"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>

@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>前端面试—Js面试题汇总 - 归子莫的博客</title>
+  
+  
+    <meta name="description" content="前端面试—Js面试题汇总">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://www.guizimo.top/index/logo.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div class="cover-wrapper">
+    
+      <cover class='cover post half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">归子莫的博客</p>
+    
+    
+      <p class="subtitle">「笔杆揭不起，绘不出青烟别春泥  ————归子莫」</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-rss fa-fw'></i>博客
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>归档
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/friends/"
+                
+                
+                id="friends">
+                <i class='fas fa-link fa-fw'></i>友链
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/about/"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            VOLANTIS <b><sup style='color:#3AA757'>2.6.6</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal blur article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/09/27/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Js%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/">
+      前端面试—Js面试题汇总
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://Tangleia.github.io" rel="nofollow">
+    <img src="https://www.guizimo.top/index/logo.png">
+    <p>归子莫</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年9月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h2 id="前端面试—Js面试题汇总"><a href="#前端面试—Js面试题汇总" class="headerlink" title="前端面试—Js面试题汇总"></a>前端面试—Js面试题汇总</h2><a id="more"></a>
+
+<p><strong>博客说明</strong></p>
+<blockquote>
+<p>文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！</p>
+</blockquote>
+<h4 id="1、有几种方式可以实现继承"><a href="#1、有几种方式可以实现继承" class="headerlink" title="1、有几种方式可以实现继承"></a>1、有几种方式可以实现继承</h4><p>JS里常用的有如下两种继承方式：<br><strong>原型链继承</strong>（对象间的继承）<br><strong>类式继承</strong>（构造函数间的继承）</p>
+<h5 id="方法一：原型链"><a href="#方法一：原型链" class="headerlink" title="方法一：原型链"></a><strong>方法一：原型链</strong></h5><p>原型链的基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。每一个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的指针。如果：我们让原型对象A等于另一个类型B的实例，那么原型对象A就会有一个指针指向B的原型对象，相应的B的原型对象中保存着指向其构造函数的指针。假如B的原型对象又是另一个类型的实例，那么上述的关系依旧成立，如此层层递进，就构成了实例与原型的链条。<br>注意： 通过原型链实现继承时，不能使用对象字面量创建原型方法，因为这样做会重写原型链。<br>问题： 原型链很强大，可以利用它来实现继承，但是也有一些问题，主要的问题还是包含引用类型值的原型属性会被所有实例共享。因此我们在构造函数中定义实例属性。但是在通过原型来实现继承时，原型对象其实变成了另一个类型的实例。于是原先定义在构造函数中的实例属性变成了原型属性了。<br>原型链的另一个问题是： 在创建子类型的实例时，不能在不影响所有对象实例的情况下，给超类型的构造函数传递参数。</p>
+<h5 id="方法二：构造函数"><a href="#方法二：构造函数" class="headerlink" title="方法二：构造函数"></a><strong>方法二：构造函数</strong></h5><p>为了解决原型中包含引用类型值带来的一些问题，引入了借用构造函数的技术。这种技术的基础思想是：在子类型构造函数的内部调用超类型构造函数。 </p>
+<p>Parent.call(this)在新创建的Child实例环境下调用Parent构造函数。这样，就在新的Child对象上，此处的kid1和kid2对象上执行Parent()函数中定义的对象初始化代码。这样，每个Child实例就都会具有自己的friends属性的副本了。</p>
+<p>借用构造函数的方式可以在子类型的构造函数中向超类型构造函数传递参数。<br>构造函数模式的问题： 在于方法都在构造函数中定义，函数复用无从谈起，因此，借用构造函数的模式也很少单独使用。</p>
+<h5 id="方法三：组合继承"><a href="#方法三：组合继承" class="headerlink" title="方法三：组合继承"></a><strong>方法三：组合继承</strong></h5><p>组合继承指的是将原型链和借用构造函数的技术组合在一块，从而发挥二者之长。即：使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。 </p>
+<p>Person构造函数定义了两个属性：name和friends。Person的原型定义了一个方法sayName()。Child构造函数在调用Parent构造函数时，传入了name参数，紧接着又定义了自己的属性age。然后将Person的实例赋值给Child的原型，然后又在该原型上定义了方法sayAge().这样，两个不同的Child实例既分别拥有自己的属性,包括引用类型的属性，又可以使用相同的方法了。 </p>
+<p>组合继承避免了原型链和构造函数的缺陷，融合了他们的有点，成为JavaScript中最常用的继承模式。而且，instanceOf和isPropertyOf()也能够识别基于组合继承创建的对象。</p>
+<h5 id="方法四：原型式继承"><a href="#方法四：原型式继承" class="headerlink" title="方法四：原型式继承"></a><strong>方法四：原型式继承</strong></h5><p>这是另一种继承，没有严格意义上的构造函数。思路是：借助原型可以基于已有的对象创建新对象，同时还不必要创建自定义类型。<br>在object()函数内部，先创建一个临时的构造函数，然后将传入的对象作为构造函数的原型，最后返回这个临时类型的一个新实例。从本质上讲，object()对传入其中的对象执行了一次浅复制。</p>
+<h5 id="方法五：寄生式继承"><a href="#方法五：寄生式继承" class="headerlink" title="方法五：寄生式继承"></a><strong>方法五：寄生式继承</strong></h5><p>寄生式继承是与原型式继承紧密相关的一种思路，与寄生式构造函数和工厂模式类似，即创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，最后再像真地是它做了所有工作一样返回对象。<br>使用寄生式继承来为对象添加函数，会由于不能做到函数的复用而降低效率；这一点和构造函数继承模式类似。</p>
+<h5 id="方法六：寄生组合式继承"><a href="#方法六：寄生组合式继承" class="headerlink" title="方法六：寄生组合式继承"></a><strong>方法六：寄生组合式继承</strong></h5><p>所谓寄生组合式继承，即通过借用构造函数来继承属性，通过原型链来继承方法。寄生组合式继承的基本思路：不必为了指定子类型而调用超类型的构造函数，我们所需要的无非就是超类型原型的一个副本而已。本质上，就是使用寄生式继承超类型的原型，然后再将结果指定给子类型的原型。</p>
+<h4 id="原型实现继承的优缺点及解决方式"><a href="#原型实现继承的优缺点及解决方式" class="headerlink" title="原型实现继承的优缺点及解决方式"></a>原型实现继承的优缺点及解决方式</h4><p><strong>优点</strong>：</p>
+<p>可以继承构造函数属性，也可继承原型属性</p>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li><p>在创建子类实例化时，不能向超类型的构造函数中传参</p>
+</li>
+<li><p>子类型继承了父类型原型中的所有属性和方法，但对于引用类型属性值所有实例共享，故不能在不改变其他实例情况下改变。</p>
+</li>
+</ol>
+<p><strong>解决方式</strong>：</p>
+<p>使用组合继承。</p>
+<h4 id="垃圾回收机制（闭包的延伸）"><a href="#垃圾回收机制（闭包的延伸）" class="headerlink" title="垃圾回收机制（闭包的延伸）"></a>垃圾回收机制（闭包的延伸）</h4><p>js拥有特殊的垃圾回收机制，当一个变量在内存中失去引用，js会通过特殊的算法将其回收，并释放内存。分为以下两个阶段：</p>
+<ol>
+<li>标记阶段：垃圾回收器，从根对象开始遍历，访问到的每一个对象都会被标示为可到达对象。</li>
+<li>清除阶段：垃圾回收器在对内存当中进行线性遍历，如果发现该对象没有被标记为可到达对象，那么就会被垃圾回收机制回收。<br>这里面牵扯到了引用计数法，每次引用都被会‘➕1’ 如果标记清零，那么就会被回收掉。</li>
+</ol>
+<h4 id="简述深浅拷贝"><a href="#简述深浅拷贝" class="headerlink" title="简述深浅拷贝"></a>简述深浅拷贝</h4><h5 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h5><p> 通常需要拷贝的对象内部只有一层的这种对象。<br> <strong>常用的方法</strong></p>
+<ol>
+<li><code>Object.assign</code>方法来实现</li>
+<li>扩展运算符 <code>...obj</code></li>
+</ol>
+<h5 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h5><p> 通常是嵌套二层或以上的复杂对象<br> <strong>常用方法</strong></p>
+<ol>
+<li><code>JSON.parse(JSON.stringfy(object))</code>; 该方法忽略掉undefined、忽略Symbol、忽略function。只适合简单深拷贝</li>
+<li>手写递归方法去实现。</li>
+<li>通过第三方库提供的深拷贝实现。</li>
+</ol>
+<h5 id="讲一下let、var、const的区别"><a href="#讲一下let、var、const的区别" class="headerlink" title="讲一下let、var、const的区别"></a>讲一下let、var、const的区别</h5><ul>
+<li>var 没有块级作用域，支持变量提升。</li>
+<li>let 有块级作用域，不支持变量提升。不允许重复声明，暂存性死区。不能通过window.变量名进行访问.</li>
+<li>const 有块级作用域，不支持变量提升，不允许重复声明，暂存性死区。声明一个变量一旦声明就不能改变，改变报错。</li>
+</ul>
+<h4 id="call-apply区别，原生实现bind"><a href="#call-apply区别，原生实现bind" class="headerlink" title="call apply区别，原生实现bind"></a>call apply区别，原生实现bind</h4><h5 id="call、apply区别"><a href="#call、apply区别" class="headerlink" title="call、apply区别"></a>call、apply区别</h5><p>相同点：都是重定向this指针的方法。<br>不同点：call和apply的第二个参数不相同，call是若干个参数的列表。apply是一个数组</p>
+<p>手写一个call方法</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在这之前需要重新认识一下call方法的执行操作</span></span><br><span class="line"><span class="keyword">let</span> mock = &#123; <span class="attr">value</span> : <span class="number">1</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mockNum</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">'value'</span>,<span class="keyword">this</span>.value)</span><br><span class="line">&#125;</span><br><span class="line">mockNum.call(mock) <span class="comment">// 改变了函数中this的指向，当前this指向了mock对象</span></span><br><span class="line"></span><br><span class="line">转换一下实现方法就是</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> mock = &#123;</span><br><span class="line">  value:<span class="number">1</span>;</span><br><span class="line">  mockNum:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'value'</span>,<span class="keyword">this</span>.value)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">mock.mockNum();</span><br><span class="line">所以经过上面这个操作的演化而来的结果就是如下步骤：</span><br><span class="line"><span class="number">1.</span> 将函数设为一个对象的属性</span><br><span class="line"><span class="number">2.</span> 并将这个函数的属性调用</span><br><span class="line"><span class="number">3.</span> 删除该函数</span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.Mycall = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = context || <span class="built_in">window</span>;</span><br><span class="line">  obj.fn = <span class="keyword">this</span>; <span class="comment">//   这一步可以看做是this其实就指的当前函数。</span></span><br><span class="line">  <span class="keyword">let</span> args = [...arguments].slice(<span class="number">1</span>); <span class="comment">// 返回删除第一个元素的数组；</span></span><br><span class="line">  <span class="keyword">let</span> result = obj.fn(...args); <span class="comment">// 调用函数</span></span><br><span class="line">  <span class="keyword">delete</span> obj.fn;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作一下</span></span><br><span class="line"><span class="keyword">let</span> mock = &#123; <span class="attr">value</span> : <span class="number">1</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mockNum</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'value'</span>,<span class="keyword">this</span>.value);</span><br><span class="line">&#125;</span><br><span class="line">mockNum.Mycall(mock) <span class="comment">// value 1</span></span><br></pre></td></tr></table></figure>
+
+<p>然后根据上面的方法再手写一个apply方法</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.Myapply = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj = context || <span class="built_in">window</span>;</span><br><span class="line">    obj.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="built_in">arguments</span>[<span class="number">1</span>] ? obj.fn(<span class="built_in">arguments</span>[<span class="number">1</span>]) : obj.fn([]);</span><br><span class="line">    <span class="keyword">delete</span> obj.fn;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> mock3 = &#123;</span><br><span class="line">  arr: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>],</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrx2</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.arr.concat(arr).map(<span class="function">(<span class="params">x</span>) =&gt;</span> x * <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"arrx2"</span>, arrx2.myApply(mock3));</span><br></pre></td></tr></table></figure>
+
+<h5 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h5><p>bind方法是直接返回一个新的函数，需要手动去调用才能执行。</p>
+<p>创建一个新函数，当这个新函数被调用时，bind()方法的第一个参数将作为运行他的this，之后的一系列参数将会在传递的实参传入作为他的参数；</p>
+<p><strong>特点</strong>：1. 返回一个函数。 2. 可以传入参数；</p>
+<p>】手写一个bind方法</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line"><span class="keyword">let</span> foo = &#123; <span class="attr">value</span> : <span class="number">1</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'bindFoo'</span>,<span class="keyword">this</span>.value);</span><br><span class="line">  <span class="comment">// return this.value // 考虑到函数可能有返回值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> bindFoo = bar.bind(foo);</span><br><span class="line">bindFoo() <span class="comment">// 1  // 如果有返回值的情况下 bindFoo() === 1;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.Mybind = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span> !== <span class="string">'function'</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'not a function'</span>);</span><br><span class="line">  <span class="keyword">let</span> self = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">let</span> args = [...arguments].clice(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span> <span class="keyword">instanceof</span> F)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> self(...args,...arguments);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> self.apply(obj,args.concat([...arguments]));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="捕获和冒泡"><a href="#捕获和冒泡" class="headerlink" title="捕获和冒泡"></a>捕获和冒泡</h5><p><strong>捕获</strong>：就是从根元素开始向目标元素递进的一个关系；从上而下<br><strong>冒泡</strong>：是从目标元素开始向根元素冒泡的过程；想象一下水里的泡泡从下而上。</p>
+<p>stopPropagation 通常理解它是用来阻止事件冒泡的，其实该函数也可以阻止捕获事件。</p>
+<h4 id="箭头函数和普通函数的区别是什么"><a href="#箭头函数和普通函数的区别是什么" class="headerlink" title="箭头函数和普通函数的区别是什么"></a>箭头函数和普通函数的区别是什么</h4><h5 id="普通函数this："><a href="#普通函数this：" class="headerlink" title="普通函数this："></a>普通函数this：</h5><ol>
+<li>this总是代表它的直接调用者。</li>
+<li>在默认情况下，没找到直接调用者，this指的是window。</li>
+<li>在严格模式下，没有直接调用者的函数中的this是undefined。</li>
+<li>使用call,apply,bind绑定，this指的是绑定的对象。</li>
+</ol>
+<h5 id="箭头函数this："><a href="#箭头函数this：" class="headerlink" title="箭头函数this："></a>箭头函数this：</h5><ol>
+<li>在使用=&gt;定义函数的时候，this的指向是 定义时所在的对象，而不是使用时所在的对象；</li>
+<li>不能够用作构造函数，这就是说，不能够使用new命令，否则就会抛出一个错误；</li>
+<li>不能够使用 arguments 对象；</li>
+<li>不能使用 yield 命令；</li>
+</ol>
+<h5 id="js跨域如何解决———————"><a href="#js跨域如何解决———————" class="headerlink" title="js跨域如何解决———————-"></a>js跨域如何解决———————-</h5><p>目前暂时已知的跨域方法是：</p>
+<ol>
+<li>jsonp跨域，原理：script标签没有跨域限制的漏洞实现的一种跨域方法，只支持get请求。安全问题会受到威胁。</li>
+<li>cors跨域，通过后端服务器实现，<code>Access-Control-Allow-Origin</code>。</li>
+<li>postMessage <code>window</code>的一个属性方法。</li>
+<li>websocket</li>
+<li>nginx反向代理</li>
+<li>iframe跨域</li>
+</ol>
+<h5 id="webpack-proxy跨域"><a href="#webpack-proxy跨域" class="headerlink" title="webpack proxy跨域"></a>webpack proxy跨域</h5><p>首先需要明白webpack proxy跨域只能用作与开发阶段，临时解决本地请求服务器产生的跨域问题。并不适合线上环境。配置在webpack的devServer属性中。webpack中的devsever配置后，打包阶段在本地临时生成了一个node服务器，浏览器请求服务器相当于请求本地服务。</p>
+<h5 id="深度优先和广度优先"><a href="#深度优先和广度优先" class="headerlink" title="深度优先和广度优先"></a>深度优先和广度优先</h5><p>广度优先：尝试访问尽可能靠近它的目标节点，然后逐层向下遍历，直至最远的节点层级。<br>深度优先：从起始节点开始，一直向下找到最后一个节点，然后返回，又继续下一条路径。知道找遍所有的节点。</p>
+<h5 id="简单介绍一下event-loop"><a href="#简单介绍一下event-loop" class="headerlink" title="简单介绍一下event loop"></a>简单介绍一下event loop</h5><p>js作为单线程语言。在执行过程中，会产生执行环境。这些执行环境中的代码被顺序的加入到执行栈中，如果遇到异步代码，会被挂起并加入到任务队列当中，等到主线程任务执行完毕，event loop就会从任务队列取出需要执行的代码放入到执行栈中执行。所以本质上来讲，js中的异步还是同步的行为。</p>
+<p>任务队列有分为宏任务和微任务队列。<br> 一次正确的event loop执行顺序如下：</p>
+<ol>
+<li>执行所有同步代码</li>
+<li>执行栈为空，查询是否有需要执行的微任务。</li>
+<li>微任务（有：则执行，无：则跳出）</li>
+<li>必要的话开始渲染UI</li>
+<li>开始下一轮的任务队列执行宏任务中的异步代码。</li>
+</ol>
+<h4 id="如何实现图片懒加载"><a href="#如何实现图片懒加载" class="headerlink" title="如何实现图片懒加载"></a>如何实现图片懒加载</h4><p>当访问一个页面的时候，先把img元素或是其他元素的背景图片路径替换成一张大小为1*1px图片的路径（这样就只需请求一次），只有当图片出现在浏览器的可视区域内时，才设置图片真正的路径，让图片显示出来。这就是图片懒加载。<br>通常可以借助<code>IntersectionObserver</code> API。</p>
+<h4 id="instanceof和typeof"><a href="#instanceof和typeof" class="headerlink" title="instanceof和typeof"></a><strong>instanceof和</strong>typeof</h4><h5 id="instanceof原理"><a href="#instanceof原理" class="headerlink" title="instanceof原理"></a><strong>instanceof原理</strong></h5><p>instanceOf用来判断右边的prototype是否在左边的原型链上，告诉我们左边是否是右边的实例。</p>
+<p><strong>typeof 检测对象</strong></p>
+<p>除开函数是function类型之外。像常见的数组，对象或者是正则,日期等等都是object；</p>
+<p><strong>感谢</strong></p>
+<blockquote>
+<p>万能的网络</p>
+<p>以及勤劳的自己，<a href="https://blog.guizimo.top/" target="_blank" rel="noopener">个人博客</a>，<a href="https://tangleia.github.io/">GitHub</a></p>
+<p><img src="https://www.guizimo.top/images/blog.png" alt="微信公众号"></p>
+</blockquote>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://tangleia.github.io/2020/09/27/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Js%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/>https://tangleia.github.io/2020/09/27/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Js%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-29T16:02:38+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年9月29日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://tangleia.github.io/2020/09/27/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Js%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/&title=前端面试—Js面试题汇总 - 归子莫的博客&summary=前端面试—Js面试题汇总"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tangleia.github.io/2020/09/27/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Js%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/&title=前端面试—Js面试题汇总 - 归子莫的博客&summary=前端面试—Js面试题汇总"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://tangleia.github.io/2020/09/27/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Js%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/&title=前端面试—Js面试题汇总 - 归子莫的博客&summary=前端面试—Js面试题汇总"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/10/26/%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882020%EF%BC%89%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>面试题（2020）微信小程序常见面试题</p>
+                <p class='content'>面试题（2020）微信小程序常见面试题
+
+博客说明
+
+文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！
+
+1、微信的小程序的主要文件
+...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/09/23/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E2%80%94Html%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB/'>
+                <p class='title'>前端面试—Html面试题汇总<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>前端面试—Html面试题汇总
+
+博客说明
+
+文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！
+
+1、语义化为什么要语义化?a. 为了在...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments blur">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '前端面试—Js面试题汇总',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端面试—Js面试题汇总"><span class="toc-text">前端面试—Js面试题汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、有几种方式可以实现继承"><span class="toc-text">1、有几种方式可以实现继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#方法一：原型链"><span class="toc-text">方法一：原型链</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法二：构造函数"><span class="toc-text">方法二：构造函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法三：组合继承"><span class="toc-text">方法三：组合继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法四：原型式继承"><span class="toc-text">方法四：原型式继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法五：寄生式继承"><span class="toc-text">方法五：寄生式继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法六：寄生组合式继承"><span class="toc-text">方法六：寄生组合式继承</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#原型实现继承的优缺点及解决方式"><span class="toc-text">原型实现继承的优缺点及解决方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#垃圾回收机制（闭包的延伸）"><span class="toc-text">垃圾回收机制（闭包的延伸）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简述深浅拷贝"><span class="toc-text">简述深浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#浅拷贝"><span class="toc-text">浅拷贝</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#深拷贝"><span class="toc-text">深拷贝</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#讲一下let、var、const的区别"><span class="toc-text">讲一下let、var、const的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#call-apply区别，原生实现bind"><span class="toc-text">call apply区别，原生实现bind</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#call、apply区别"><span class="toc-text">call、apply区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#bind"><span class="toc-text">bind</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#捕获和冒泡"><span class="toc-text">捕获和冒泡</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#箭头函数和普通函数的区别是什么"><span class="toc-text">箭头函数和普通函数的区别是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#普通函数this："><span class="toc-text">普通函数this：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#箭头函数this："><span class="toc-text">箭头函数this：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#js跨域如何解决———————"><span class="toc-text">js跨域如何解决———————-</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#webpack-proxy跨域"><span class="toc-text">webpack proxy跨域</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#深度优先和广度优先"><span class="toc-text">深度优先和广度优先</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#简单介绍一下event-loop"><span class="toc-text">简单介绍一下event loop</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何实现图片懒加载"><span class="toc-text">如何实现图片懒加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#instanceof和typeof"><span class="toc-text">instanceof和typeof</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#instanceof原理"><span class="toc-text">instanceof原理</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:17680262548@163.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Tangleia"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
